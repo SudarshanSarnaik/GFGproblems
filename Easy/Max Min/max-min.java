@@ -36,11 +36,11 @@ class Array {
 //User function Template for Java
 
 class Solution
-{   
-    public static int findSum(int arr[],int N) 
+{ 
+    public static int findSum(int A[],int N) 
     {
         //code here
-        Arrays.sort(arr);
-        return arr[0]+arr[arr.length-1];
+        Arrays.sort(A);
+    return A[0]+A[A.length-1];
     }
 }
