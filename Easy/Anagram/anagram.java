@@ -1,5 +1,6 @@
 //{ Driver Code Starts
 import java.util.*;
+import java.util.stream.*; 
 import java.lang.*;
 import java.io.*;
 
@@ -41,26 +42,27 @@ class Solution
     {
         
         // Your code here
-        char arr1[] = a.toCharArray();
-         char arr2[] = b.toCharArray();
-         
-         Arrays.sort(arr1);
-          
-         Arrays.sort(arr2);
-         if(arr1.length==arr2.length){
-              for(int i=0;i<arr1.length;i++){
-                  if(arr1[i]!=arr2[i]){
-                    return false;  
-                  }
-                  
-              }
-         }
-         else{
-             return false;
-         }
-         return true;
-         
+      
+        char arr1[]=a.toCharArray();
+        char arr2[]=b.toCharArray();
+          if(arr1.length!=arr2.length){
+            return false;
+        }
+        for(int i=0;i<arr1.length;i++){
+        arr1[i]=Character.toUpperCase(arr1[i]);
+        arr2[i]=Character.toUpperCase(arr2[i]);
         
+        }
         
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        
+        for(int i=0;i<arr1.length;i++){
+            if(arr1[i]!=arr2[i]){
+                return false;
+            }
+        }
+        
+        return true;
     }
 }
